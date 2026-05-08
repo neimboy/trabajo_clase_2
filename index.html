@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>TaskFlow - Gestión de Tareas</title>
+    <!-- Archivos CSS y JS externos -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Cabecera con título y botón de tema oscuro -->
+        <div class="header">
+            <h1>📋 TaskFlow</h1>
+            <button id="themeToggle" class="theme-toggle">🌙 Modo Oscuro</button>
+        </div>
+
+        <!-- Dashboard de estadísticas -->
+        <div class="dashboard-grid">
+            <div class="stat-card">
+                <div class="stat-title">📊 Total Tareas</div>
+                <div id="totalTasks" class="stat-number">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">✅ Progreso</div>
+                <div id="progressPercent" class="stat-number">0%</div>
+                <div class="progress-bar">
+                    <div id="progressFill" class="progress-fill"></div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">⚠️ Urgentes (Alta)</div>
+                <div id="highPriorityCount" class="stat-number">0</div>
+            </div>
+        </div>
+
+        <!-- Formulario para crear tarea -->
+        <div class="task-form">
+            <input type="text" id="taskName" placeholder="Nombre de la tarea..." autocomplete="off">
+            <select id="taskPriority">
+                <option value="alta">🔴 Alta Prioridad</option>
+                <option value="media">🟠 Media Prioridad</option>
+                <option value="baja">🟢 Baja Prioridad</option>
+            </select>
+            <button id="addTaskBtn">+ Agregar Tarea</button>
+        </div>
+
+        <!-- Barra de herramientas: filtros + buscador -->
+        <div class="toolbar">
+            <div class="filters">
+                <button data-filter="all" class="filter-btn active">Todas</button>
+                <button data-filter="pending" class="filter-btn">Pendientes</button>
+                <button data-filter="completed" class="filter-btn">Completadas</button>
+            </div>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="🔍 Buscar tarea...">
+            </div>
+        </div>
+
+        <!-- Lista de tareas -->
+        <div id="tasksContainer" class="tasks-list">
+            <!-- Las tareas se renderizan dinámicamente desde JS -->
+        </div>
+    </div>
+
+    <!-- Archivo JavaScript -->
+    <script src="js/app.js"></script>
+</body>
+</html>
