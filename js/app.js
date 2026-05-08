@@ -30,10 +30,10 @@ const loadFromLocalStorage = () => {
     } else {
         // Datos de ejemplo para mostrar que funciona
         tasks = [
-            { id: Date.now() + 1, name: '✅ Revisar documentación', priority: 'alta', completed: true },
-            { id: Date.now() + 2, name: '📌 Implementar localStorage', priority: 'alta', completed: false },
-            { id: Date.now() + 3, name: '🎨 Mejorar estilos CSS', priority: 'media', completed: false },
-            { id: Date.now() + 4, name: '📱 Hacer responsive', priority: 'baja', completed: false }
+            { id: Date.now() + 1, name: ' Revisar documentación', priority: 'alta', completed: true },
+            { id: Date.now() + 2, name: ' Implementar localStorage', priority: 'alta', completed: false },
+            { id: Date.now() + 3, name: ' Mejorar estilos CSS', priority: 'media', completed: false },
+            { id: Date.now() + 4, name: ' Hacer responsive', priority: 'baja', completed: false }
         ];
         saveToLocalStorage();
     }
@@ -102,9 +102,9 @@ const getFilteredTasks = () => {
 // ==================== RENDERIZADO DE TAREAS ====================
 const getPriorityBadge = (priority) => {
     const badges = {
-        alta: '<span class="badge alta">🔴 Alta</span>',
-        media: '<span class="badge media">🟠 Media</span>',
-        baja: '<span class="badge baja">🟢 Baja</span>'
+        alta: '<span class="badge alta"> Alta</span>',
+        media: '<span class="badge media"> Media</span>',
+        baja: '<span class="badge baja"> Baja</span>'
     };
     return badges[priority] || badges.media;
 };
@@ -180,10 +180,10 @@ const loadTheme = () => {
     const savedTheme = localStorage.getItem('taskflow_theme');
     if (savedTheme === 'dark') {
         document.body.classList.add('dark-theme');
-        themeToggleBtn.textContent = '☀️ Modo Claro';
+        themeToggleBtn.textContent = ' Modo Claro';
     } else {
         document.body.classList.remove('dark-theme');
-        themeToggleBtn.textContent = '🌙 Modo Oscuro';
+        themeToggleBtn.textContent = ' Modo Oscuro';
     }
 };
 
@@ -191,7 +191,7 @@ const toggleTheme = () => {
     document.body.classList.toggle('dark-theme');
     const isDark = document.body.classList.contains('dark-theme');
     localStorage.setItem('taskflow_theme', isDark ? 'dark' : 'light');
-    themeToggleBtn.textContent = isDark ? '☀️ Modo Claro' : '🌙 Modo Oscuro';
+    themeToggleBtn.textContent = isDark ? ' Modo Claro' : ' Modo Oscuro';
 };
 
 // ==================== FILTROS Y BÚSQUEDA (eventos) ====================
