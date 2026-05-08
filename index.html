@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>TaskFlow - Gestión de Tareas</title>
-    <!-- Archivos CSS y JS externos -->
+    <!-- Estilos CSS -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -63,7 +63,12 @@
         </div>
     </div>
 
-    <!-- Archivo JavaScript -->
-    <script src="js/app.js"></script>
-</body>
-</html>
+    <!-- Archivo JavaScript (versión simple para probar) -->
+    <script type="module" src="js/app.js"></script>
+    <script>
+      // Fallback para navegadores que no soportan módulos
+      window.addEventListener('error', function(e) {
+        console.error('Error de carga:', e.error);
+      });
+    </script>
+</head>
